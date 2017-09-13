@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title></title>
+    <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">网易云音乐歌单播放排行榜</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed table-striped">
+                            <tr class="success">
+                                <th>ID</th>
+                                <th>歌单名称</th>
+                                <th>用户</th>
+                                <th>播放次数</th>
+                                <th>歌单地址</th>
+                            </tr>
+                            <tr th:each="p : ${page.content}">
+                                <td th:text="${p.id}"></td>
+                                <td th:text="${p.sheetName}"></td>
+                                <td th:text="${p.sheetUser}"></td>
+                                <td th:text="${p.playNum}"></td>
+                                <td th:text="${p.sheetUrl}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
